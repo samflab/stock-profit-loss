@@ -1,9 +1,9 @@
-var boughtPrice = document.getElementById("price1");
+var boughtPrice = document.getElementById("cost-price");
 var units = document.getElementById("units");
-var currentPrice = document.getElementById("curr");
+var currentPrice = document.getElementById("current-price");
 document.getElementById("btn").addEventListener("click", check);
-var goodGIF = "./good.gif";
-var badGIF = "./bad.gif";
+var goodGIF = "./images/good.gif";
+var badGIF = "./images/bad.gif";
 var div = document.getElementById("gif");
 var msg = document.getElementById("msg");
 
@@ -17,12 +17,12 @@ function check(e) {
   }
   // if all values are above zero
   else {
-    const profitLoss = (currentPrice.value - boughtPrice.value) * units.value; //profit amount 
+    const profitLoss = (currentPrice.value - boughtPrice.value) * units.value; //profit or loss amount 
     // it will be either profit amount or loss amount, as negetives also exists
     const profitLossPercentage = (
       (profitLoss / (boughtPrice.value * units.value)) *
       100
-    ).toFixed(2); //profit percentage
+    ).toFixed(2); //profit or loss percentage
 
     //loss
     if (profitLoss <= 0) {

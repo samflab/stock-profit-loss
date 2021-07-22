@@ -61,6 +61,11 @@ input {
   border-radius: 5px;
   margin: 5px 0px 5px 0px;
 }
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
 
 button {
   background-color: #c5dd3b;
@@ -92,11 +97,10 @@ label {
 }
 
 @media screen and (max-width: 960px) {
-  .container{
+  .container {
     width: 90%;
   }
-  form{
-    padding:1.5rem;
+  form {
+    padding: 1.5rem;
   }
-  
 }
