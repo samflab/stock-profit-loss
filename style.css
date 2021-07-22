@@ -90,3 +90,13 @@ label {
   margin-top: 1rem;
   font-size: 1.3rem;
 }
+
+@media screen and (max-width: 960px) {
+  .container{
+    width: 90%;
+  }
+  form{
+    padding:1.5rem;
+  }
+  
+}
