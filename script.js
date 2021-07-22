@@ -14,36 +14,36 @@ function check(e) {
   if (boughtPrice.value <= 0 || units.value <= 0 || currentPrice.value <= 0) {
     msg.innerHTML = "Please enter values greater than zero.";
     //div.style.backgroundImage = "none";
-  } else {
-    //profit
-    if (currentPrice.value > boughtPrice.value) {
-      const profitLoss = (currentPrice.value - boughtPrice.value) * units.value; //profit amount
-      const profitLossPercentage = (
-        (profitLoss / (boughtPrice.value * units.value)) *
-        100
-      ).toFixed(2); //profit percentage
+  }
+  // if all values are above zero
+  else {
+    const profitLoss = (currentPrice.value - boughtPrice.value) * units.value; //profit amount 
+    // it will be either profit amount or loss amount, as negetives also exists
+    const profitLossPercentage = (
+      (profitLoss / (boughtPrice.value * units.value)) *
+      100
+    ).toFixed(2); //profit percentage
 
-      //loss
-      if (profitLoss <= 0) {
-        div.style.backgroundImage = `url(${badGIF})`;
-        msg.innerHTML =
-          "There's a " +
-          `${profitLossPercentage}` +
-          "% loss. You lost ₹ " +
-          `${profitLoss}`;
-        console.log("loss");
-      } else {
-        div.style.backgroundImage = `url(${goodGIF})`;
-        msg.innerHTML =
-          "There's a " +
-          `${profitLossPercentage}` +
-          "% profit. You gained ₹ " +
-          `${profitLoss}`;
-        console.log("profit");
-      }
-      div.style.backgroundRepeat = "no-repeat";
-      div.style.height = "210px";
-      div.style.backgroundSize= "cover";
+    //loss
+    if (profitLoss <= 0) {
+      div.style.backgroundImage = `url(${badGIF})`;
+      msg.innerHTML =
+        "There's a " +
+        `${profitLossPercentage}` +
+        "% loss. You lost ₹ " +
+        `${profitLoss}`;
+      console.log("loss");
+    } else {
+      div.style.backgroundImage = `url(${goodGIF})`;
+      msg.innerHTML =
+        "There's a " +
+        `${profitLossPercentage}` +
+        "% profit. You gained ₹ " +
+        `${profitLoss}`;
+      console.log("profit");
     }
+    div.style.backgroundRepeat = "no-repeat";
+    div.style.height = "210px";
+    div.style.backgroundSize = "cover";
   }
 }
